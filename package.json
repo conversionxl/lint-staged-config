@@ -1,0 +1,24 @@
+{
+    "name": "@conversionxl/lint-staged-config",
+    "version": "0.1.0",
+    "description": "CXL's lint-staged configuration.",
+    "main": "index.js",
+    "repository": "https://github.com/conversionxl/lint-staged-config",
+    "author": "CXL <leho@cxl.com>",
+    "license": "MIT",
+    "peerDependencies": {
+        "eclint": "^2.8.1",
+        "eslint": "^7.7.0",
+        "husky": "^4.2.5",
+        "lint-staged": "^10.2.13"
+    },
+    "scripts": {
+        "postinstall": "node postinstall.js"
+    },
+    "devDependencies": {
+        "eclint": "^2.8.1",
+        "eslint": "^7.7.0",
+        "husky": "^4.2.5",
+        "lint-staged": "^10.2.13"
+    }
+}
