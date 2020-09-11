@@ -16,7 +16,10 @@ if (!fs.existsSync(huskyConfigPath)) {
 /**
  * lint-staged.
  */
-const lintStagedConfigPath = path.join(process.env.INIT_CWD, 'lint-staged.config.js');
+const lintStagedConfigPath = path.join(
+    process.env.INIT_CWD,
+    'lint-staged.config.js'
+);
 
 if (!fs.existsSync(lintStagedConfigPath)) {
     fs.writeFileSync(

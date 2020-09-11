@@ -7,18 +7,19 @@
     "author": "CXL <leho@cxl.com>",
     "license": "MIT",
     "peerDependencies": {
-        "eclint": "^2.8.1",
         "eslint": "^7.7.0",
         "husky": "^4.2.5",
-        "lint-staged": "^10.2.13"
+        "lint-staged": "^10.2.13",
+        "prettier": "^2.1.1"
     },
     "scripts": {
         "postinstall": "node postinstall.js"
     },
     "devDependencies": {
-        "eclint": "^2.8.1",
         "eslint": "^7.7.0",
+        "eslint-config-prettier": "^6.11.0",
         "husky": "^4.2.5",
-        "lint-staged": "^10.2.13"
+        "lint-staged": "^10.2.13",
+        "prettier": "^2.1.1"
     }
 }
