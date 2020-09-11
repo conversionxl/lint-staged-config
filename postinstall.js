@@ -27,3 +27,15 @@ if (!fs.existsSync(lintStagedConfigPath)) {
         "module.exports = require('@conversionxl/lint-staged-config');\n"
     );
 }
+
+/**
+ * prettier.
+ */
+const prettierConfigPath = path.join(process.env.INIT_CWD, '.prettierrc.js');
+
+if (!fs.existsSync(prettierConfigPath)) {
+    fs.writeFileSync(
+        prettierConfigPath,
+        "module.exports = require('@conversionxl/lint-staged-config/.prettierrc.js');\n"
+    );
+}
