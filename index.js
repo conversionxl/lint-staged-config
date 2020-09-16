@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 
 module.exports = {
@@ -9,9 +10,21 @@ module.exports = {
             .map((file) => path.relative(cwd, file))
             .join(' ');
 
-        return [
-            `./vendor/bin/phpcbf ${relativeFilenames}; if [ $? -eq 1 ]; then exit 0; fi`,
-            `./vendor/bin/phpcs -s ${relativeFilenames}`,
-        ];
+        const phpConfigs = {
+            'phpcs.xml': [
+                `./vendor/bin/phpcbf ${relativeFilenames}; if [ $? -eq 1 ]; then exit 0; fi`,
+                `./vendor/bin/phpcs -s ${relativeFilenames}`,
+            ],
+            'psalm.xml': [`./vendor/bin/psalm ${relativeFilenames}`],
+        };
+
+        // @see https://reedbarger.com/how-to-transform-javascript-objects-the-power-of-objectkeys-values-entries/#replacing-map--filter-with-a-single-reduce
+        return Object.entries(phpConfigs).reduce((acc, [config, commands]) => {
+            if (fs.existsSync(config)) {
+                acc.push(...commands);
+            }
+
+            return acc;
+        }, []);
     },
 };
