@@ -1,5 +1,5 @@
 module.exports = {
     hooks: {
-        'pre-commit': 'lint-staged --shell --verbose',
+        'pre-commit': 'npx lint-staged --shell --verbose',
     },
 };
