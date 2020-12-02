@@ -1,10 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 
+const cwd = process.env.INIT_CWD || process.cwd();
+
 /**
  * husky.
  */
-const huskyConfigPath = path.join(process.env.INIT_CWD, 'husky.config.js');
+const huskyConfigPath = path.join(cwd, 'husky.config.js');
 
 if (!fs.existsSync(huskyConfigPath)) {
     fs.writeFileSync(
@@ -17,7 +19,7 @@ if (!fs.existsSync(huskyConfigPath)) {
  * lint-staged.
  */
 const lintStagedConfigPath = path.join(
-    process.env.INIT_CWD,
+    cwd,
     'lint-staged.config.js'
 );
 
@@ -31,7 +33,7 @@ if (!fs.existsSync(lintStagedConfigPath)) {
 /**
  * prettier.
  */
-const prettierConfigPath = path.join(process.env.INIT_CWD, '.prettierrc.js');
+const prettierConfigPath = path.join(cwd, '.prettierrc.js');
 
 if (!fs.existsSync(prettierConfigPath)) {
     fs.writeFileSync(
