@@ -4,6 +4,20 @@ const path = require('path');
 const cwd = process.env.INIT_CWD || process.cwd();
 
 /**
+ * commitlint.
+ *
+ * @since 2021.03.18
+ */
+const commitlintConfigPath = path.join(cwd, 'commitlint.config.js');
+
+if (!fs.existsSync(commitlintConfigPath)) {
+    fs.writeFileSync(
+        commitlintConfigPath,
+        "module.exports = { extends: ['@commitlint/config-conventional'] };\n"
+    );
+}
+
+/**
  * husky.
  */
 const huskyConfigPath = path.join(cwd, 'husky.config.js');
@@ -18,10 +32,7 @@ if (!fs.existsSync(huskyConfigPath)) {
 /**
  * lint-staged.
  */
-const lintStagedConfigPath = path.join(
-    cwd,
-    'lint-staged.config.js'
-);
+const lintStagedConfigPath = path.join(cwd, 'lint-staged.config.js');
 
 if (!fs.existsSync(lintStagedConfigPath)) {
     fs.writeFileSync(
