@@ -1,14 +1,24 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es2020": true,
-        "node": true,
+    parser: 'babel-eslint',
+    env: {
+        browser: true,
+        commonjs: true,
+        es2020: true,
+        node: true,
     },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "ecmaVersion": 12
+    extends: ['@10up/eslint-config', '@10up/eslint-config/wordpress'],
+    parserOptions: {
+        ecmaVersion: 12,
+        ecmaFeatures: {
+            jsx: true,
+        },
     },
-    "rules": {
-    }
+    rules: {},
+    globals: {
+        module: true,
+        process: true,
+        window: true,
+        document: true,
+        wp: true,
+    },
 };
