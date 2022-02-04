@@ -5,7 +5,17 @@ module.exports = {
     rules: {
         'body-max-line-length': [1, 'always', 100],
         'header-max-length': [1, 'always', 100],
-        'scope-case': [2, 'never', ['kebab-case', 'snake-case']],
+        'scope-case': [
+            2,
+            'always',
+            [
+                'lower-case',
+                'kebab-case',
+                'pascal-case',
+                'sentence-case',
+                'start-case',
+            ],
+        ],
         'subject-case': [
             2,
             'never',
