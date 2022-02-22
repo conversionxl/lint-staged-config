@@ -16,17 +16,7 @@ module.exports = {
                 'start-case',
             ],
         ],
-        'subject-case': [
-            2,
-            'never',
-            [
-                'upper-case',
-                'camel-case',
-                'kebab-case',
-                'pascal-case',
-                'snake-case',
-            ],
-        ],
+        'subject-case': [2, 'never', ['start-case', 'pascal-case', 'upper-case']],
         'type-enum': [
             2,
             'always',
