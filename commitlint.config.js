@@ -5,18 +5,18 @@ module.exports = {
     rules: {
         'body-max-line-length': [1, 'always', 100],
         'header-max-length': [1, 'always', 100],
-        'scope-case': [2, 'never', ['kebab-case', 'snake-case']],
-        'subject-case': [
+        'scope-case': [
             2,
-            'never',
+            'always',
             [
-                'upper-case',
-                'camel-case',
+                'lower-case',
                 'kebab-case',
                 'pascal-case',
-                'snake-case',
+                'sentence-case',
+                'start-case',
             ],
         ],
+        'subject-case': [2, 'never', ['start-case', 'pascal-case', 'upper-case']],
         'type-enum': [
             2,
             'always',
