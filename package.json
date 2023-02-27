@@ -10,19 +10,20 @@
         "@commitlint/cli": "^12.0.1",
         "@commitlint/config-conventional": "^12.0.1",
         "eslint": "^7.7.0",
-        "husky": "^4.2.5",
+        "husky": "^8.0.0",
         "lint-staged": "^10.2.13",
         "prettier": "^2.1.1"
     },
     "scripts": {
-        "postinstall": "node postinstall.js"
+        "postinstall": "node postinstall.js",
+        "prepare": "husky install"
     },
     "devDependencies": {
         "@commitlint/cli": "^12.0.1",
         "@commitlint/config-conventional": "^12.0.1",
         "eslint": "^7.7.0",
         "eslint-config-prettier": "^6.11.0",
-        "husky": "^4.2.5",
+        "husky": "^8.0.0",
         "lint-staged": "^10.2.13",
         "prettier": "^2.1.1"
     }
