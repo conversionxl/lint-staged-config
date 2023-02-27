@@ -20,12 +20,14 @@ if (!fs.existsSync(commitlintConfigPath)) {
 /**
  * husky.
  */
-const huskyConfigPath = path.join(cwd, 'husky.config.js');
+const dotHuskyPath = path.join(cwd, '.husky');
 
-if (!fs.existsSync(huskyConfigPath)) {
-    fs.writeFileSync(
-        huskyConfigPath,
-        "module.exports = require('@conversionxl/lint-staged-config/husky.config.js');\n"
+if (!fs.existsSync(dotHuskyPath)) {
+    fs.mkdirSync(dotHuskyPath);
+    fs.cpSync(
+        path.join(cwd, 'node_modules/@conversionxl/lint-staged-config/.husky'),
+        dotHuskyPath,
+        { recursive: true }
     );
 }
 
